@@ -5,13 +5,24 @@
 //the basic syntax is Future<T> : the aynchronous function will return a T type value
 
 Future<void> asynchronousFunction() {
+    //this function returns a void element (the printing sentence)
   return Future.delayed(
     const Duration(seconds: 5),
     () => print('result of asynchronous function after 5 seconds')
   );
 }
 
+
+//returning an error
+Future<void> ReturningError (){
+  return Future.delayed(
+    const Duration(seconds: 5),
+    () => throw Exception("this is the error message for my stupid function")
+  );
+}
+
+//we will learn about error handling later on
 void main() {
-  asynchronousFunction();
+  ReturningError();
   print("hello bitches");
 }
